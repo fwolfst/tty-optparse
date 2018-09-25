@@ -26,7 +26,7 @@ option_parser = OptionParser.new do |opts|
 
   opts.separator ["", "Common options"]
   opts.on("-c", "--config FILE",
-					"Read config values from file (defaults: ./config.yml, ~/.config.yml") do |c|
+          "Read config values from file (defaults: ./config.yml, ~/.config.yml") do |c|
     options[:config_file_path] = c
   end
   opts.on_tail("-h", "--help", "Show this message and exit") do
@@ -51,12 +51,12 @@ if !options[:config_file_path]
 end
 
 begin
-	print "Attempting to read from configuration file #{config_filename}"
-	config.read config_filename
-	puts " ... fine."
+  print "Attempting to read from configuration file #{config_filename}"
+  config.read config_filename
+  puts " ... fine."
 rescue TTY::Config::ReadError => read_error
-	STDERR.puts "\nNo configuration file found:"
-	STDERR.puts read_error
+  STDERR.puts "\nNo configuration file found:"
+  STDERR.puts read_error
 end
 
 # Merge options passed by arguments (--host) with those from file
@@ -64,14 +64,14 @@ config.merge(options)
 
 # Validation
 if !config.fetch(:host) || !config.fetch(:port)
-	STDERR.puts "Host and port have to be specified (call with --help for help)."
-	exit 1
+  STDERR.puts "Host and port have to be specified (call with --help for help)."
+  exit 1
 end
 
 # Execution
 puts "Connect to %s@%s:%d" % [
-	config.fetch(:user, default: 'user'),
-	config.fetch(:host),
-	config.fetch(:port)]
+  config.fetch(:user, default: 'user'),
+  config.fetch(:host),
+  config.fetch(:port)]
 
 exit 0
