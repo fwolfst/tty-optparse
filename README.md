@@ -3,7 +3,7 @@
 Provide a sane method of configuring a tool either via command line options (`tool --option 2`) and/or a configuration file.
 Options provided via command line take precedence over options specified in the configuration file.
 
-This is an example for `tty-config` in combination with Ruby `optparse` stdlib, orginally for piotrmurach/tty-config#1 .
+This is an example for `tty-config` in combination with Ruby `optparse` stdlib, orginally for https://github.com/piotrmurach/tty-config#1 .
 
 
 ```sh
