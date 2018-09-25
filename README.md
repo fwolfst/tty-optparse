@@ -7,13 +7,13 @@ This is an example for `tty-config` in combination with Ruby `optparse` stdlib, 
 
 
 ```sh
-$ ./tty-optparse
+$ ./tty-optparse-min.rb
 No configuration file found.
 Need to specify at least host and port (call with --help to find out how).
 ```
 
 ```sh
-$ ./tty-optparse --host localhost --port 8811
+$ ./tty-optparse-min.rb --host localhost --port 8811
 No configuration file found.
 Connect to user@localhost:8811
 ```
@@ -22,7 +22,7 @@ Connect to user@localhost:8811
 $ cat ~/.tty-optparse.conf
 host: 127.0.0.1
 port: 7711
-$ ./tty-optparse
+$ ./tty-optparse-min.rb
 Connect to user@127.0.0.1:7711
 ```
 
@@ -30,6 +30,6 @@ Connect to user@127.0.0.1:7711
 $ cat ~/.tty-optparse.conf
 host: 127.0.0.1
 port: 7711
-$ ./tty-optparse --host localhost
+$ ./tty-optparse-min.rb --host localhost
 Connect to user@localhost:7711
 ```
